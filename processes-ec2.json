@@ -1,13 +1,13 @@
 [
   {
-    "name"              : "eth",
+    "name"              : "vap",
     "cwd"               : "/home/ubuntu/bin/www/",
-    "script"            : "bin/eth.sh",
-    "args"              : "ethpassword",
+    "script"            : "bin/vap.sh",
+    "args"              : "vappassword",
     "log_date_format"   : "YYYY-MM-DD HH:mm Z",
-    "log_file"          : "/home/ubuntu/logs/eth-log.log",
-    "out_file"          : "/home/ubuntu/logs/eth-out.log",
-    "error_file"        : "/home/ubuntu/logs/eth-err.log",
+    "log_file"          : "/home/ubuntu/logs/vap-log.log",
+    "out_file"          : "/home/ubuntu/logs/vap-out.log",
+    "error_file"        : "/home/ubuntu/logs/vap-err.log",
     "merge_logs"        : false,
     "watch"             : false,
     "max_restarts"      : 10,
@@ -35,7 +35,7 @@
       "LISTENING_PORT"  : "30303",
       "INSTANCE_NAME"   : "",
       "CONTACT_DETAILS" : "",
-      "WS_SERVER"       : "wss://rpc.ethstats.net",
+      "WS_SERVER"       : "wss://rpc.vapstats.net",
       "WS_SECRET"       : "see http://forum.ethereum.org/discussion/2112/how-to-add-yourself-to-the-stats-dashboard-its-not-automatic",
       "VERBOSITY"       : 2
     }

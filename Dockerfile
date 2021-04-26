@@ -1,4 +1,4 @@
-## Dockerfile for eth-net-intelligence-api (build from git).
+## Dockerfile for vap-net-intelligence-api (build from git).
 ##
 ## Build via:
 #
@@ -6,11 +6,11 @@
 #
 ## Run via:
 #
-# `docker run -v <path to app.json>:/home/ethnetintel/eth-net-intelligence-api/app.json ethnetintel:latest`
+# `docker run -v <path to app.json>:/home/ethnetintel/vap-net-intelligence-api/app.json ethnetintel:latest`
 #
 ## Make sure, to mount your configured 'app.json' into the container at
-## '/home/ethnetintel/eth-net-intelligence-api/app.json', e.g.
-## '-v /path/to/app.json:/home/ethnetintel/eth-net-intelligence-api/app.json'
+## '/home/ethnetintel/vap-net-intelligence-api/app.json', e.g.
+## '-v /path/to/app.json:/home/ethnetintel/vap-net-intelligence-api/app.json'
 ## 
 ## Note: if you actually want to monitor a client, you'll need to make sure it can be reached from this container.
 ##       The best way in my opinion is to start this container with all client '-p' port settings and then 
@@ -19,7 +19,7 @@
 ##
 #
 # `docker run -d --name ethnetintel \
-# -v /home/user/app.json:/home/ethnetintel/eth-net-intelligence-api/app.json \
+# -v /home/user/app.json:/home/ethnetintel/vap-net-intelligence-api/app.json \
 # -p 0.0.0.0:30303:30303 \
 # -p 0.0.0.0:30303:30303/udp \
 # ethnetintel:latest`
@@ -46,12 +46,12 @@ RUN apt-get update &&\
 RUN adduser ethnetintel
 
 RUN cd /home/ethnetintel &&\
-    git clone https://github.com/cubedro/eth-net-intelligence-api &&\
-    cd eth-net-intelligence-api &&\
+    git clone https://github.com/cubedro/vap-net-intelligence-api &&\
+    cd vap-net-intelligence-api &&\
     npm install &&\
     npm install -g pm2
 
-RUN echo '#!/bin/bash\nset -e\n\ncd /home/ethnetintel/eth-net-intelligence-api\n/usr/bin/pm2 start ./app.json\ntail -f \
+RUN echo '#!/bin/bash\nset -e\n\ncd /home/ethnetintel/vap-net-intelligence-api\n/usr/bin/pm2 start ./app.json\ntail -f \
     /home/ethnetintel/.pm2/logs/node-app-out-0.log' > /home/ethnetintel/startscript.sh
 
 RUN chmod +x /home/ethnetintel/startscript.sh &&\
