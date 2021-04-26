@@ -32,11 +32,11 @@ Configure the app modifying [processes.json](/vap-net-intelligence-api/blob/mast
 	{
 		"NODE_ENV"        : "production", // tell the client we're in production environment
 		"RPC_HOST"        : "localhost", // vap JSON-RPC host
-		"RPC_PORT"        : "8545", // vap JSON-RPC port
-		"LISTENING_PORT"  : "30303", // vap listening port (only used for display)
+		"RPC_PORT"        : "8575", // vap JSON-RPC port
+		"LISTENING_PORT"  : "10801", // vap listening port (only used for display)
 		"INSTANCE_NAME"   : "", // whatever you wish to name your node
 		"CONTACT_DETAILS" : "", // add your contact details here if you wish (email/skype)
-		"WS_SERVER"       : "wss://rpc.vapstats.net", // path to vap-netstats WebSockets api server
+		"WS_SERVER"       : "wss://status.vapory.org", // path to vap-netstats WebSockets api server
 		"WS_SECRET"       : "see http://forum.ethereum.org/discussion/2112/how-to-add-yourself-to-the-stats-dashboard-its-not-automatic", // WebSockets api server secret used for login
 		"VERBOSITY"       : 2 // Set the verbosity (0 = silent, 1 = error, warn, 2 = error, warn, info, success, 3 = all logs)
 	}
